@@ -1,0 +1,15 @@
+def opening_scene():
+    print("You have travelled for many days to arrive at the Oaken Building that stands before you.")
+    print("A wooden sign hangs from the balcony above a set of finely crafted wooden doors.")
+    print("It reads:")
+    print()
+    print("                               The Snarling Warg Tavern                                   ")
+    print()
+    print("As you pull on the door handles, you are greeted with the warmth of a blazing hearth, and the sweet smell")
+    print("of ale.")
+    print("")
+    print("The tavern appears to be empty, save for one man who seems to be occupied with cleaning fine glass mug as")
+    print("he hums to himself. He notices you as you step through the doorway and head towards the bar... ")
+    print("")
+    input("Press any key to continue")
+

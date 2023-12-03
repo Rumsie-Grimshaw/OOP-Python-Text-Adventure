@@ -27,4 +27,4 @@ def purple_text():
     print('\33[35m')
 
 def press_enter_to_continue():
-    input("Press any key to continue...")
+    input('\33[32m'"Press any key to continue...")

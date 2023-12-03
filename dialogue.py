@@ -93,17 +93,30 @@ def choose_race_options():
     print("\"Tell me of your home and kin... theres another ale in it for you!!\""'\33[32m\n')
     print("\33[31mChoose your Race:")
     print("\33[36m--Available Races--\33[32m\n")
-    print("[a] Human:\33[0m\n"
+    print("[I] Human:\33[0m\n"
           "While not especially unique, Humans are well rounded and effective adventurers:")
 
     print("HP:25,  STR: 10,  DEF: 10\n"'\33[32m')
 
-    print("[b] Elf:\33[0m\nAncient and generally peaceful people, what they lack in strength, "
+    print("[II] Elf:\33[0m\nAncient and generally peaceful people, what they lack in strength, "
           "they make up in speed.")
     print("HP:20,  STR: 5,  DEF: 10\n"'\33[32m')
 
-    print("[c] Dwarf\33[0m:\nProud and stubborn folk, though their size limits their speed,they are fierce warriors.")
+    print("[III] Dwarf\33[0m:\nProud and stubborn folk, though their size limits their speed,they are fierce warriors.")
     print("HP:30,  STR: 15,  DEF: 10\n"'\33[32m')
+
+def human_details():
+    utility.clear()
+    print('\33[32m'"Brewswig the Innkeeper:"'\33[33m')
+    print("\"\33[35mHuman\33[33m, ay..? I thought so, but it's always better to know than to assume.\"")
+    print("\"I have met my fair share of your kin standing behind this bar over the years. Many a story has been ")
+    print("recounted on that very stool you sit upon.\"\n")
+    print("\"Funny though, I don't really recall anything great or exceptional about them.\"\n")
+    print("\"Although I have a feeling you might be an exception...\"\n")
+    print("\"I know of a human settlement to the North of here, but the name of the place escapes me.\"")
+    print("\"Its name was just so... so... unexceptional...\"\n")
+
+
 
 
 

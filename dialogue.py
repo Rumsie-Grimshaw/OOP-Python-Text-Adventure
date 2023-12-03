@@ -83,10 +83,27 @@ def brewswig_tell_me_your_race(player):
     print("\"I must say, with all that adventuring gear on, I can't tell where you hail from?\"\n")
     print("\"Are you from the \33[35mHuman\33[33m settlements to the North?\"")
     print("\"Or maybe the \33[35mElven\33[33m forests to the West?\"")
-    print("\"Perhaps you come from the grand underground kingdom of the \33[35mDwarves\33[33m to the East?\"")
+    print("\"Perhaps you come from the grand underground kingdom of the \33[35mDwarves\33[33m to the East?\"\33[32m")
     print()
-    print("\"Tell me of your home and kin... theres another ale in it for you!!\""'\33[32m\n')
     utility.press_enter_to_continue()
+    utility.clear()
+
+def choose_race_options():
+    print('\33[32m'"Brewswig the Innkeeper:"'\33[33m')
+    print("\"Tell me of your home and kin... theres another ale in it for you!!\""'\33[32m\n')
+    print("\33[31mChoose your Race:")
+    print("\33[36m--Available Races--\33[32m\n")
+    print("[a] Human:\33[0m\n"
+          "While not especially unique, Humans are well rounded and effective adventurers:")
+
+    print("HP:25,  STR: 10,  DEF: 10\n"'\33[32m')
+
+    print("[b] Elf:\33[0m\nAncient and generally peaceful people, what they lack in strength, "
+          "they make up in speed.")
+    print("HP:20,  STR: 5,  DEF: 10\n"'\33[32m')
+
+    print("[c] Dwarf\33[0m:\nProud and stubborn folk, though their size limits their speed,they are fierce warriors.")
+    print("HP:30,  STR: 15,  DEF: 10\n"'\33[32m')
 
 
 

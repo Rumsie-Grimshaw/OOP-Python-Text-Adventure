@@ -39,7 +39,31 @@ class Brewswig:
     def tell_me_your_race(self, player):
         correct_race = False
         dialogue.brewswig_tell_me_your_race(player)
-        player.name = input('\33[0m'"Answer: "'\33[35m')
+        dialogue.choose_race_options()
+        while not correct_race:
+            race = input('\33[0m'"Answer: "'\33[35m').lower()
+            if race == "h":
+                player.race = "Human"
+                player.health = 25
+                player.strength = 10
+                player.defense = 10
+
+            elif race == "e":
+                player.race = "Elf"
+                player.health = 20
+                player.strength = 5
+                player.defense = 10
+
+            elif race == "d":
+                player.race = "Dwarf"
+                player.health = 30
+                player.strength = 15
+                player.defense = 10
+
+            else:
+                print("\n\33[31mInvalid Selection: Please try again\n")
+                continue
+
 
 
 

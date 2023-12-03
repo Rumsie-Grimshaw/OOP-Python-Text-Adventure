@@ -70,22 +70,22 @@ def brewswig_tell_me_your_race(player):
           f"and interesting came through\n those doors.\"")
 
     utility.white_text()
-    print("\33[35mBrewswig\33[0m chuckles to himself before removing a clean glass mug from underneath the bar and"
-          "turned to the same barrel \nhe had filled yours from, producing a nice foamy ale; that he quickly gulps "
+    print("\33[35mBrewswig\33[0m chuckles to himself before removing a clean glass mug from underneath the bar and "
+          "turns to the same barrel \nhe had filled yours from, producing a nice foamy ale; that he quickly gulps "
           "down.\n")
     print("**Gulp...Gulp...Gulp\n")
-    print("He wipes the foam stuck to his bushy mustache with a satisfied look on his face."
+    print("He wipes the foam stuck to his bushy mustache with a satisfied look on his face.\n"
           "Smiling once more, he turns to you.\n")
 
     print('\33[32m'"Brewswig the Innkeeper:"'\33[33m')
     print(f"\"So\33[35m {player.name}\33[33m, while we're gettin to know each other, how 'bout tellin me a little bit "
-          f"about yourself?\n")
-    print("\"I must say, with all that adventuring gear on, I can't tell where you hail from?\n")
+          f"about yourself?\"\n")
+    print("\"I must say, with all that adventuring gear on, I can't tell where you hail from?\"\n")
     print("\"Are you from the \33[35mHuman\33[33m settlements to the North?\"")
-    print("\"Or maybe the \33[35mElven\33[33m forests to the West?")
-    print("\"Perhaps you came from the grand underground kingdom of the \33[35mDwarves\33[33m to the East?\"")
+    print("\"Or maybe the \33[35mElven\33[33m forests to the West?\"")
+    print("\"Perhaps you come from the grand underground kingdom of the \33[35mDwarves\33[33m to the East?\"")
     print()
-    print("\"Tell me of your home and kin... theres another ale in it for your!!\33[32m\"\n")
+    print("\"Tell me of your home and kin... theres another ale in it for you!!\""'\33[32m\n')
     utility.press_enter_to_continue()
 
 

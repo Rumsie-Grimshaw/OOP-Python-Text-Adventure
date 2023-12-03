@@ -29,6 +29,10 @@ class Player(Entity):
         choice = input("").lower()
         if choice == "h":
             return player_races[0]
+        if choice == "d":
+            return player_races[1]
+        if choice == "e":
+            return player_races[2]
 
 
 

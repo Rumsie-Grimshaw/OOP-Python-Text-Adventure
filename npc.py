@@ -11,6 +11,7 @@ class Brewswig:
     def tell_me_your_name(self):
         utility.clear()
         print('\"Brewswig the Innkeeper:')
+        utility.white_text()
         print("\"Welcome adventurer! Allow me to introduce myself.\" \n**Ahem!**")
         print(
             "\n\"The names Brewswig, an' this fine den you find yourself in this even'in, is The Snarling Warg Tavern.\"")

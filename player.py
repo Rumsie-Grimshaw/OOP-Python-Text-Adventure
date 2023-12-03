@@ -18,18 +18,25 @@ class Player(Entity):
             else:
                 print("Thats okay. I have plenty more glasses to clean until your ready to talk.\n")
 
-    def get_player_race(self):
-        player_races = ["Human", "Dwarf", "Elf"]
-        print("Select your Race")
+    def get_player_race_human(self, player):
+            player.race = "Human"
+            player.health = 25
+            player.strength = 10
+            player.defense = 10
+            return player.race, player.health, player.strength, player.defense
 
-        race = None
-        choice = input("").lower()
-        if choice == "h":
-            return player_races[0]
-        if choice == "d":
-            return player_races[1]
-        if choice == "e":
-            return player_races[2]
+    def get_player_race_elf(self, player):
+            player.race = "Elf"
+            player.health = 20
+            player.strength = 5
+            player.defense = 10
+            return player.race, player.health, player.strength, player.defense
 
+    def get_player_race_dwarf(self, player):
+            player.race = "Dwarf"
+            player.health = 30
+            player.strength = 15
+            player.defense = 10
+            return player.race, player.health, player.strength, player.defense
 
 

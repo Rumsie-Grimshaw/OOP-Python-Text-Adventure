@@ -28,3 +28,9 @@ def purple_text():
 
 def press_enter_to_continue():
     input('\33[32m'"Press any key to continue...")
+
+def confirm_option():
+    print('\33[32m'"1) Agree     2) Disagree"'\33[35m')
+    print()
+    answer = input('\33[0m'"Answer: "'\33[35m')
+    return answer

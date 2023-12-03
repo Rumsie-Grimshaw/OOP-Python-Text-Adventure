@@ -93,9 +93,9 @@ def choose_race_options():
     print("\"Tell me of your home and kin... theres another ale in it for you!!\""'\33[32m\n')
     print("\33[31mChoose your Race:")
     print("\33[36m--Available Races--\33[32m\n")
+
     print("[I] Human:\33[0m\n"
           "While not especially unique, Humans are well rounded and effective adventurers:")
-
     print("HP:25,  STR: 10,  DEF: 10\n"'\33[32m')
 
     print("[II] Elf:\33[0m\nAncient and generally peaceful people, what they lack in strength, "
@@ -105,7 +105,8 @@ def choose_race_options():
     print("[III] Dwarf\33[0m:\nProud and stubborn folk, though their size limits their speed,they are fierce warriors.")
     print("HP:30,  STR: 15,  DEF: 10\n"'\33[32m')
 
-def human_details():
+
+def brewswig_human_details():
     utility.clear()
     print('\33[32m'"Brewswig the Innkeeper:"'\33[33m')
     print("\"\33[35mHuman\33[33m, ay..? I thought so, but it's always better to know than to assume.\"")
@@ -113,8 +114,29 @@ def human_details():
     print("recounted on that very stool you sit upon.\"\n")
     print("\"Funny though, I don't really recall anything great or exceptional about them.\"\n")
     print("\"Although I have a feeling you might be an exception...\"\n")
-    print("\"I know of a human settlement to the North of here, but the name of the place escapes me.\"")
+    print("\"I know of a \33[35mHuman\33[33m settlement to the North of here, but the name of the place escapes me.\"")
     print("\"Its name was just so... so... unexceptional...\"\n")
+    print('\33[36m'"Human Base Stats:\nHP:25,  STR: 10,  DEF: 10\n\33[33m")
+    print("\"Oh... sorry... I got caught up in my story. You did say \33[35mHuman\33[33m, right?")
+
+
+def brewswig_elf_details():
+    utility.clear()
+    print('\33[32m'"Brewswig the Innkeeper:"'\33[33m')
+    print("\"An \33[35mElf\33[33m you say..?! Fascinating! I can't say I was expectin that!\"")
+    print("\"I can't recall the last time I spoke too or even saw an \33[35mElf\33[33m!\"\n")
+    print("\"If I'm not mistaken; your kin are known for their agility and wisdom not for their strength.\"")
+    print("\"I'm yet to see anyone best a Elf with speed alone, 'cept when they've had some ale o'course\"\n")
+    print("\"You can find an \33[35mElf\33[33m settlement to the West of here, deep in the forest.\"")
+    print("\"I personally would not go there, these old legs can't carry me from danger like they could when I ")
+    print("was younger. However, you look more agile than most... you might be okay...\"\n")
+    print('\33[36m'"Elf Base Stats:\nHP:25,  STR: 10,  DEF: 10\n\33[33m")
+    print("\"Oh... sorry... I got caught up in my story. You did say \33[35mElf\33[33m, right?\"\n")
+
+
+def brewswig_dwarf_details():
+    pass
+
 
 
 

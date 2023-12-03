@@ -20,9 +20,7 @@ class Brewswig:
                 player.name = input('\33[0m'"Answer: "'\33[35m')
                 continue
             dialogue.brewswig_query_name(player)
-            print('\33[32m'"1) Agree     2) Disagree"'\33[35m')
-            print()
-            answer = input('\33[0m'"Answer: "'\33[35m')
+            answer = utility.confirm_option()
             if answer == "1":
                 correct_name = True
             else:
@@ -36,31 +34,45 @@ class Brewswig:
         utility.clear()
         return player.name
 
+    # Look at simplifying this code
     def tell_me_your_race(self, player):
         correct_race = False
         dialogue.brewswig_tell_me_your_race(player)
         dialogue.choose_race_options()
+        race = input('\33[0m'"Answer: "'\33[35m').lower()
         while not correct_race:
-            race = input('\33[0m'"Answer: "'\33[35m').lower()
-            print(race)
-            if race == "i":
-                player.race = "Human"
-                player.health = 25
-                player.strength = 10
-                player.defense = 10
-                correct_race = True
+            if race == "i" or race == "1":
+                player. get_player_race_human(player)
+                dialogue.brewswig_human_details()
+                answer = utility.confirm_option()
+                if answer == "1":
+                    correct_race = True
+                else:
+                    correct_race = False
+                    dialogue.choose_race_options()
+                    race = input('\33[0m'"Answer: "'\33[35m').lower()
+                    continue
 
-            elif race == "ii":
-                player.race = "Elf"
-                player.health = 20
-                player.strength = 5
-                player.defense = 10
+            elif race == "ii" or race == "2":
+                player.get_player_race_elf(player)
+                dialogue.brewswig_elf_details()
+                answer = utility.confirm_option()
+                if answer == "1":
+                    correct_race = True
+                else:
+                    dialogue.choose_race_options()
+                    race = input('\33[0m'"Answer: "'\33[35m').lower()
+                    continue
 
-            elif race == "iii":
-                player.race = "Dwarf"
-                player.health = 30
-                player.strength = 15
-                player.defense = 10
+            elif race == "iii" or race == "3":
+                player.get_player_race_dwarf(player)
+                answer = utility.confirm_option()
+                if answer == "1":
+                    correct_race = True
+                else:
+                    dialogue.choose_race_options()
+                    race = input('\33[0m'"Answer: "'\33[35m').lower()
+                    continue
 
             else:
                 print("\n\33[31mInvalid Selection: Please try again\n")
@@ -68,7 +80,9 @@ class Brewswig:
                 utility.clear()
                 dialogue.choose_race_options()
                 continue
-        dialogue.human_details()
+
+
+
 
 
 

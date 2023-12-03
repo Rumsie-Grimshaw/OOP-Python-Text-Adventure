@@ -16,10 +16,11 @@ def start_game():
     character_creation(player_instance)
 
 def character_creation(player):
-    brewswig.tell_me_your_name()
-    player.name = player.get_player_name()
-    player.race = player.get_player_race()
+    brewswig.tell_me_your_name(player)
     utility.clear()
+    brewswig.tell_me_your_race(player)
+    utility.clear()
+    input("Press enter to see the player.name and player.race results!")
     print(f"{player.name}, {player.race}")
 
 

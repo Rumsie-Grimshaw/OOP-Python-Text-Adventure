@@ -51,7 +51,7 @@ def interact():
 
         else:
             print("Please select a valid option.")
-            input('\33[32m'"Press any key to continue."'\33[32m')
+            input('\33[32m'"Press any key to continue."'\33[0m')
 
 def about():
     utility.clear()
@@ -61,5 +61,5 @@ def about():
     print("utilising them in a interactive adventure game.")
     print("** further information to be added**!\n")
     print()
-    input('\33[32m'"Press any key to continue."'\33[32m')
+    input('\33[32m'"Press any key to continue."'\33[0m')
     return

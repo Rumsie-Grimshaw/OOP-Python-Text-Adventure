@@ -19,3 +19,12 @@ def green_text():
 
 def white_text():
     print('\33[0m')
+
+def gold_text():
+    print('\33[33m')
+
+def purple_text():
+    print('\33[35m')
+
+def press_enter_to_continue():
+    input("Press any key to continue...")

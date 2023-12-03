@@ -1,6 +1,7 @@
 import start_menu
 import utility
 import dialogue
+from character_creation import CharacterCreation
 from npc import *
 from player import *
 
@@ -16,12 +17,17 @@ def start_game():
     character_creation(player_instance)
 
 def character_creation(player):
-    brewswig.tell_me_your_name(player)
+    create_character = CharacterCreation()
+    create_character.tell_me_your_name(player)
     utility.clear()
-    brewswig.tell_me_your_race(player)
+    create_character.tell_me_your_race(player)
     utility.clear()
-    input("Press enter to see the player.name and player.race results!")
-    print(f"{player.name}, {player.race}")
+    input("Press enter to see your character results!")
+    print(f"Name: {player.name}\n"
+          f"Race: {player.race}\n"
+          f"HP: {player.health}\n"
+          f"Str: {player.strength}\n"
+          f"Def: {player.defense}\n")
 
 
 # Start Program

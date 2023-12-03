@@ -110,14 +110,14 @@ def brewswig_human_details():
     utility.clear()
     print('\33[32m'"Brewswig the Innkeeper:"'\33[33m')
     print("\"\33[35mHuman\33[33m, ay..? I thought so, but it's always better to know than to assume.\"")
-    print("\"I have met my fair share of your kin standing behind this bar over the years. Many a story has been ")
+    print("\"I have met my fair share of your kin from this side of the bar over the years. Many a story has been ")
     print("recounted on that very stool you sit upon.\"\n")
     print("\"Funny though, I don't really recall anything great or exceptional about them.\"\n")
     print("\"Although I have a feeling you might be an exception...\"\n")
     print("\"I know of a \33[35mHuman\33[33m settlement to the North of here, but the name of the place escapes me.\"")
     print("\"Its name was just so... so... unexceptional...\"\n")
     print('\33[36m'"Human Base Stats:\nHP:25,  STR: 10,  DEF: 10\n\33[33m")
-    print("\"Oh... sorry... I got caught up in my story. You did say \33[35mHuman\33[33m, right?")
+    print("\"Oh... sorry... I got caught up in my story. You did say \33[35mHuman\33[33m, right?\"")
 
 
 def brewswig_elf_details():
@@ -126,7 +126,8 @@ def brewswig_elf_details():
     print("\"An \33[35mElf\33[33m you say..?! Fascinating! I can't say I was expectin that!\"")
     print("\"I can't recall the last time I spoke too or even saw an \33[35mElf\33[33m!\"\n")
     print("\"If I'm not mistaken; your kin are known for their agility and wisdom not for their strength.\"")
-    print("\"I'm yet to see anyone best a Elf with speed alone, 'cept when they've had some ale o'course\"\n")
+    print("\"I'm yet to see anyone best a \33[35mElf\33[33m with speed alone, 'cept when they've had a tad too much "
+          "ale o'course\"\n")
     print("\"You can find an \33[35mElf\33[33m settlement to the West of here, deep in the forest.\"")
     print("\"I personally would not go there, these old legs can't carry me from danger like they could when I ")
     print("was younger. However, you look more agile than most... you might be okay...\"\n")
@@ -135,7 +136,16 @@ def brewswig_elf_details():
 
 
 def brewswig_dwarf_details():
-    pass
+    utility.clear()
+    print('\33[32m'"Brewswig the Innkeeper:"'\33[33m')
+    print("\"Really? A \33[35mDwarf\33[33m..? You're much... taller... than I would have expected.\"")
+    print("\"I remember that last Dwarf I saw... Boasted on and on about how strong he was.\"")
+    print("\"Shame his strength didnt help him run out of the way of that mad pack mule... That wasn't pretty...\"\n")
+    print("\"You can find the \33[35mDwarf\33[33m kingdom in the mountains to the East if your interested.\"")
+    print("\"But personally, I like to keep myself above ground. I have never been curious to know what lurks")
+    print("in the depths below the surface.\"\n")
+    print("You however... well... you look like you can handle that sort of adventure.\"\n")
+    print("\"Oh... sorry... I got caught up in my story. You did say \33[35mDwarf\33[33m, right?\"\n")
 
 
 

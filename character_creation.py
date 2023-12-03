@@ -82,3 +82,8 @@ class CharacterCreation:
                 dialogue.choose_race_options()
                 continue
 
+    def tell_me_your_specialty(self, player):
+        utility.clear()
+        dialogue.brewswig_tell_me_your_specialty(player)
+        input()
+

@@ -1,3 +1,4 @@
+import player
 import utility
 from npc import Brewswig
 
@@ -29,7 +30,7 @@ def brewswig_tell_me_your_name():
     utility.clear()
     print('\33[32m'"Brewswig the Innkeeper:"'\33[32m')
     utility.gold_text()
-    print("\"Well 'ello there adventurer! Allow me to introduce myself.\""'\33[0m')
+    print("\"Well hello there adventurer! Allow me to introduce myself.\""'\33[0m')
     print("\nHe places the freshly cleaned glass mug in front of you, and proudly throws the cleaning rag over his")
     print("shoulder; clearing his throat as he does so.")
     utility.gold_text()
@@ -41,7 +42,7 @@ def brewswig_tell_me_your_name():
     print("Taking the glass mug in front of you; Brewswig turns toward a oaken barrel resting on a shelf next to him.")
     print("The foamy ale quickly fills the glass mug, and once filled; Brewswig places it down in front of you.")
     utility.gold_text()
-    print("\"There ya go, this ones on the house. So... ah... what did you say your name was?\"\n")
+    print("\"There ya go, this ones on the house. So... ah... what did you say your name was?\"")
     utility.purple_text()
 
 def brewswig_query_name(player):
@@ -55,7 +56,6 @@ def brewswig_no_name_given():
     print("Look, i've been in the business a long time; and my gut tells me that ain't your name.")
     print("I got plenty of glasses to clean while I wait for you to give me a proper answer."'\33[32m')
     print()
-
 
 def brewswig_incorrect_name():
     print('\33[32m'"Brewswig the Innkeeper:"'\33[33m')
@@ -91,8 +91,8 @@ def brewswig_tell_me_your_race(player):
 def choose_race_options():
     print('\33[32m'"Brewswig the Innkeeper:"'\33[33m')
     print("\"Tell me of your home and kin... theres another ale in it for you!!\""'\33[32m\n')
-    print("\33[31mChoose your Race:")
-    print("\33[36m--Available Races--\33[32m\n")
+    print("\33[36m--Available Races--\33[32m")
+    print("Choose your Race:\n")
 
     print("[I] Human:\33[0m\n"
           "While not especially unique, Humans are well rounded and effective adventurers:")
@@ -146,6 +146,16 @@ def brewswig_dwarf_details():
     print("in the depths below the surface.\"\n")
     print("You however... well... you look like you can handle that sort of adventure.\"\n")
     print("\"Oh... sorry... I got caught up in my story. You did say \33[35mDwarf\33[33m, right?\"\n")
+
+def brewswig_tell_me_your_specialty(player):
+    utility.clear()
+    print('\33[32mBrewswig the Innkeeper:\33[33m')
+    print(f"\"So your a \33[35m{player.race}\33[33m who goes by the name \33[35m{player.name}\33[33m? Well met "
+          f"friend.\nHere... another ale as promised.\"\n")
+    print("\33[35mBrewswig\33[0m takes your mug and once again fills it with ale. Frothy foam drips down the side of")
+    print("the glass as he places it down in front of you.\n")
+    print("So traveller, you must have travelled a while to get here. Tell me... What is your role in the world?\"")
+
 
 
 

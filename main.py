@@ -6,6 +6,7 @@ from npc import *
 from player import *
 
 def initiliaze():
+    utility.test_colour()
     start_menu.interact()
     start_game()
 
@@ -22,13 +23,12 @@ def character_creation(player):
     utility.clear()
     create_character.tell_me_your_race(player)
     utility.clear()
+    create_character.tell_me_your_specialty(player)
+
     input("Press enter to see your character results!")
-    print(f"Name: {player.name}\n"
-          f"Race: {player.race}\n"
-          f"HP: {player.health}\n"
-          f"Str: {player.strength}\n"
-          f"Def: {player.defense}\n")
+    utility.test_character_creation(player)
 
 
 # Start Program
 initiliaze()
+

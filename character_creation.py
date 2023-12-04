@@ -28,7 +28,6 @@ class CharacterCreation:
         utility.clear()
         return player.name
 
-
     # Look at simplifying this code
     def tell_me_your_race(self, player):
         correct_race = False

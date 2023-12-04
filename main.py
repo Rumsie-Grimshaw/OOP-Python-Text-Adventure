@@ -6,7 +6,7 @@ from npc import *
 from player import *
 
 def initiliaze():
-    utility.test_colour()
+    utility.clear()
     start_menu.interact()
     start_game()
 
@@ -29,6 +29,14 @@ def character_creation(player):
     utility.test_character_creation(player)
 
 
+# Test colour
+print("\n\n")
+test = "The following text is a text to test the colour code. Brewswig the Innkeeper:\n" \
+       "So your a -race- who goes by the name -Name?. Well met friend.\n" \
+       "Here... another ale as promised.\n"
+utility.test_colour(test)
+
+
 # Start Program
-initiliaze()
+#initiliaze()
 

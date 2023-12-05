@@ -1,4 +1,5 @@
 import os
+import re
 import string
 import dialogue
 
@@ -53,27 +54,34 @@ def test_character_creation(player):
           f"Def: {player.defense}\n")
 
 
-def colour_word(word):
-    colour_code = ''
-    punct = string.punctuation
-    trailing_punct = ''
+def highlight_phrases(sentence, target_phrases_list):
+    color_codes = ('91', '32', '33', '94', '35', '36', '97')
+    highlighted_sentence = sentence
 
-    for symbol in punct:
-        if symbol in word:
-            trailing_punct = symbol
-            word = word.replace(symbol, '')
-    if word.lower() in ["so", "goes", "name", "innkeeper", "test", "code"]:
-        colour_code = GREEN
-    if word.lower() in ["brewswig", "innkeeper"]:
-        colour_code = PURPLE
-    if word.lower() in ["hello", "adventurer", "the snarling", "warg", "tavern", ]:
-        colour_code = AQUA
+    for i, target_phrases in enumerate(target_phrases_list):
+        # Sort the phrases within the list by length in descending order
+        target_phrases = sorted(target_phrases, key=lambda x: len(x), reverse=True)
+        color_code = color_codes[i % len(color_codes)]  # Use modulo to loop through color codes
+        for target_phrase in target_phrases:
+            target_phrase_lower = re.escape(target_phrase.lower())
+            pattern = re.compile(fr'\b({target_phrase_lower})\b', re.IGNORECASE)
+            highlighted_sentence = pattern.sub(
+                f'\033[{color_code}m\\1\033[0m', highlighted_sentence
+            )
 
-    return colour_code + word + WHITE + trailing_punct
+    return highlighted_sentence.strip()
 
 def test_colour(input_string):
-    words = input_string.split()
-    formatted_words = [colour_word(w) for w in words]
-    formatted_string = ' '.join(formatted_words)
-    print(formatted_string)
+    sentence = input_string
+    target_phrases_list = [
+        ["goblin", "goblins", "trolls", "wolf"],
+        ["brewswig the innkeeper", "brewswig"],
+        ["treasure", 'gp', 'gold', 'coins', 'jewels'],
+        [],
+        ["sword", "shield", "potion", "dagger", "ale"],
+        ["the snarling warg tavern", "mountains"],
+    ]
+    highlighted_result = highlight_phrases(sentence, target_phrases_list)
+    print(highlighted_result)
+
 

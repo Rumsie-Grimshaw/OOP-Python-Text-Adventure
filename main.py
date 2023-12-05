@@ -31,9 +31,10 @@ def character_creation(player):
 
 # Test colour
 print("\n\n")
-test = "The following text is a text to test the colour code. Brewswig the Innkeeper:\n" \
-       "So your a -race- who goes by the name -Name?. Well met friend.\n" \
-       "Here... another ale as promised.\n"
+test = "Brewswig the Innkeeper:\n" \
+       "So your a warrior who has no name..? Well met friend.\n" \
+       "Here... another ale as promised. I hope that The Snarling Warg Tavern suits your needs." \
+       "Atleast you wont find any goblins, trolls or a warg in here."
 utility.test_colour(test)
 
 

@@ -55,13 +55,18 @@ def test_character_creation(player):
 
 
 def highlight_phrases(sentence, target_phrases_list):
+    # Set colours of the lists in target_phrases_list in order.
     color_codes = ('91', '32', '33', '94', '35', '36', '97')
+    # Equals the sentence from test_colour()
     highlighted_sentence = sentence
 
+    # Iterate the index (i) and tuples (key, value) representing target phrases in target_phrases_list
     for i, target_phrases in enumerate(target_phrases_list):
-        # Sort the phrases within the list by length in descending order
+        # Sort list of strings by len(x), where x is temp key, discard key and order desc
         target_phrases = sorted(target_phrases, key=lambda x: len(x), reverse=True)
-        color_code = color_codes[i % len(color_codes)]  # Use modulo to loop through color codes
+        # Iterate though color_code and assign color_code index to list index
+        color_code = color_codes[i % len(color_codes)]
+
         for target_phrase in target_phrases:
             target_phrase_lower = re.escape(target_phrase.lower())
             pattern = re.compile(fr'\b({target_phrase_lower})\b', re.IGNORECASE)
@@ -74,8 +79,11 @@ def highlight_phrases(sentence, target_phrases_list):
 def test_colour(input_string):
     sentence = input_string
     target_phrases_list = [
+        # Enemies - Red
         ["goblin", "goblins", "trolls", "wolf"],
+        # Interactions / Options - Green
         ["brewswig the innkeeper", "brewswig"],
+        # Treasures / Valuables - Yellow
         ["treasure", 'gp', 'gold', 'coins', 'jewels'],
         [],
         ["sword", "shield", "potion", "dagger", "ale"],

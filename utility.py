@@ -2,6 +2,7 @@ import os
 import re
 import string
 import dialogue
+import player
 
 WHITE = '\33[0m'
 GREEN = '\33[32m'
@@ -82,10 +83,10 @@ def test_colour(input_string):
         # Enemies - Red
         ["goblin", "goblins", "trolls", "wolf"],
         # Interactions / Options - Green
-        ["brewswig the innkeeper", "brewswig", "answer"],
+        ["brewswig the innkeeper"],
         # Treasures / Valuables - Yellow
         ["treasure", 'gp', 'gold', 'coins', 'jewels'],
-        [],
+        ["brewswig"],
         ["sword", "shield", "potion", "dagger", "ale"],
         ["the snarling warg tavern", "mountains"],
     ]

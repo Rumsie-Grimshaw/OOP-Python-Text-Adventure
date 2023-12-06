@@ -2,6 +2,7 @@ import player
 import utility
 from npc import Brewswig
 
+
 def opening_scene():
     utility.draw_long()
     print("You have travelled for many days and nights, finally arriving at the grand oaken building that stands")
@@ -48,15 +49,17 @@ def brewswig_tell_me_your_name():
     utility.purple_text()
 
 def brewswig_query_name(player):
-    print('\33[32m'"Brewswig the Innkeeper:"'\33[33m')
-    print(f"\"\33[35m{player.name}\33[33m, eh? Strange name.. None too common in these parts.\"\n")
-    print(f"\"You did say \33[35m{player.name},\33[33m right?\"")
-    print("")
+    player_name = f"\33[35m{player.name}\33[0m"
+    string_one = "Brewswig the Innkeeper:\n"f"\"{player_name}, eh? Strange name.. None too common in these parts.\"\n\n" \
+                 f"\"You did say \33[35m{player_name}, right?\""
+    utility.test_colour(string_one)
+
 
 def brewswig_no_name_given():
-    print('\33[32m'"Brewswig the Innkeeper:'\33[33m'")
-    print("Look, i've been in the business a long time; and my gut tells me that ain't your name.")
-    print("I got plenty of glasses to clean while I wait for you to give me a proper answer."'\33[32m')
+    string_one = "Brewswig the Innkeeper:\n\n\"Look, i've been in the business a long time; and my gut tells me that " \
+                 "ain't your name.\"\n"\
+                 "\"I got plenty of glasses to clean while I wait for you to give me a proper answer.\""
+    utility.test_colour(string_one)
     print()
 
 def brewswig_incorrect_name():

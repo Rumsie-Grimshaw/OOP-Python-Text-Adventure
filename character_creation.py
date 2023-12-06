@@ -6,7 +6,7 @@ class CharacterCreation:
     def tell_me_your_name(self, player):
         correct_name = False
         dialogue.brewswig_tell_me_your_name()
-        player.name = input("Answer: ")
+        player.name = input('\33[0m'"Answer: "'\33[35m')
         utility.clear()
         while not correct_name:
             if player.name.strip() == "":

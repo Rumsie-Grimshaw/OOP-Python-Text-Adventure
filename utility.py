@@ -82,7 +82,7 @@ def test_colour(input_string):
         # Enemies - Red
         ["goblin", "goblins", "trolls", "wolf"],
         # Interactions / Options - Green
-        ["brewswig the innkeeper", "brewswig"],
+        ["brewswig the innkeeper", "brewswig", "answer"],
         # Treasures / Valuables - Yellow
         ["treasure", 'gp', 'gold', 'coins', 'jewels'],
         [],

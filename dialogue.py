@@ -28,21 +28,23 @@ def brewswig_greet_player(player):
 
 def brewswig_tell_me_your_name():
     utility.clear()
-    print('\33[32m'"Brewswig the Innkeeper:"'\33[32m')
-    utility.gold_text()
-    print("\"Well hello there adventurer! Allow me to introduce myself.\""'\33[0m')
-    print("\nHe places the freshly cleaned glass mug in front of you, and proudly throws the cleaning rag over his")
-    print("shoulder; clearing his throat as he does so.")
-    utility.gold_text()
-    print("**Ahem!**")
-    print("\n\"The names Brewswig, an' this fine den ye find yeself in this even'in is none other than the ")
-    print('\33[35m'"The Snarling Warg Tavern\33[33m.\"")
-    print("\"Sit down, make yourself at 'ome. I'll fetch ye a pint. You look like ye been on the road for a while.\"")
-    utility.white_text()
-    print("Taking the glass mug in front of you; Brewswig turns toward a oaken barrel resting on a shelf next to him.")
-    print("The foamy ale quickly fills the glass mug, and once filled; Brewswig places it down in front of you.")
-    utility.gold_text()
-    print("\"There ya go, this ones on the house. So... ah... what did you say your name was?\"")
+    string_one = "Brewswig the Innkeeper:\n\"Well hello there adventurer! Allow me to introduce myself.\"\n\n" \
+                 "He places the freshly cleaned glass mug in front of you, and proudly throws the cleaning\n" \
+                 "rag over his shoulder; clearing his throat as he does so."
+
+    string_two = "**Ahem!**\n\nThe names Brewswig, an' this fine den ye find yeself in this even'in is none other\n" \
+                 "than The Snarling Warg Tavern.\"\n\"Sit down and make yourself at 'ome while I fetch ye a pint." \
+                 "You look like ye been on the road for a while.\""
+
+    string_three = "Taking the glass mug in front of you; Brewswig turns toward a oaken barrel resting on a shelf next" \
+                   " to him.\n" \
+                   "The foamy ale quickly fills the glass mug, and once filled; Brewswig places it down in front of " \
+                   "you.\n\n\"There ya go, this ones on the house.\"\n\n\"So... ah... what did you say your name was?\""
+    utility.test_colour(string_one)
+    print()
+    utility.test_colour(string_two)
+    print()
+    utility.test_colour(string_three)
     utility.purple_text()
 
 def brewswig_query_name(player):

@@ -33,38 +33,33 @@ class CharacterCreation:
     def tell_me_your_race(self, player):
         correct_race = False
         dialogue.brewswig_tell_me_your_race(player)
-        dialogue.choose_race_options()
-        race = input('\33[0m'"Answer: "'\33[35m').lower()
 
         while not correct_race:
+            dialogue.choose_race_options()
+            print()
+            race = input('\33[0m'"Answer: "'\33[35m').lower()
 
             if race == "i" or race == "1":
-                self.get_player_race_human(player)
                 dialogue.brewswig_human_details()
-                answer = utility.confirm_option()
-                if answer == "1":
-                    correct_race = True
-
-            if race == "ii" or race == "2":
-                self.get_player_race_elf(player)
+                player_race = self.get_player_race_human(player)
+            elif race == "ii" or race == "2":
                 dialogue.brewswig_elf_details()
-                answer = utility.confirm_option()
-                if answer == "1":
-                    correct_race = True
-
-            if race == "iii" or race == "3":
-                self.get_player_race_dwarf(player)
+                player_race = self.get_player_race_elf(player)
+            elif race == "iii" or race == "3":
                 dialogue.brewswig_dwarf_details()
-                answer = utility.confirm_option()
-                if answer == "1":
-                    correct_race = True
+                player_race = self.get_player_race_dwarf(player)
+            else:
+                print("\n\33[31mInvalid Selection: Please try again\n")
+                utility.press_enter_to_continue()
+                utility.clear()
+                continue
 
-                else:
-                    print("\n\33[31mInvalid Selection: Please try again\n")
-                    utility.press_enter_to_continue()
-                    utility.clear()
-                    dialogue.choose_race_options()
-                    continue
+            answer = utility.confirm_option()
+            if answer == "1":
+                correct_race = True
+                return player_race
+            else:
+                continue
 
     def tell_me_your_specialty(self, player):
         utility.clear()

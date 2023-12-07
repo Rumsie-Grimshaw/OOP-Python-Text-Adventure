@@ -57,7 +57,7 @@ def test_character_creation(player):
 
 def highlight_phrases(sentence, target_phrases_list):
     # Set colours of the lists in target_phrases_list in order.
-    color_codes = ('91', '32', '33', '94', '35', '36', '97')
+    color_codes = ('91', '92', '33', '94', '35', '36', '97')
     # Equals the sentence from test_colour()
     highlighted_sentence = sentence
 
@@ -82,13 +82,22 @@ def test_colour(input_string):
     target_phrases_list = [
         # Enemies - Red
         ["goblin", "goblins", "trolls", "wolf"],
+
         # Interactions / Options - Green
         ["brewswig the innkeeper"],
+
         # Treasures / Valuables - Yellow
         ["treasure", 'gp', 'gold', 'coins', 'jewels'],
-        ["brewswig"],
+
+        # Directions - Blue
+        ["North", "South", "East", "West"],
+
+        # Names / Important - Purple
+        ["brewswig", "the snarling warg tavern", 'dwarf', 'dwarven', 'dwarves', 'elf', 'elven', 'elves', 'human',
+         'humans'],
+
+        # Items / Equipment - Aqua
         ["sword", "shield", "potion", "dagger", "ale"],
-        ["the snarling warg tavern", "mountains"],
     ]
     highlighted_result = highlight_phrases(sentence, target_phrases_list)
     print(highlighted_result)

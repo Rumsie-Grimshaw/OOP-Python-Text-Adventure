@@ -4,7 +4,6 @@ from npc import Brewswig
 
 
 def opening_scene():
-    utility.draw_long()
     print("You have travelled for many days and nights, finally arriving at the grand oaken building that stands")
     print("before you. A wooden sign hangs from the balcony above a set of finely crafted wooden doors. It reads:")
     utility.green_text()
@@ -18,97 +17,106 @@ def opening_scene():
     print("of ale.")
     print("")
     print("The tavern appears to be empty, save for one man who seems to be occupied with cleaning fine glass mug as")
-    print("he hums to himself. He notices you as you step through the doorway and head towards the bar... ")
-    print("")
-    utility.green_text()
+    print("he hums to himself. He notices you as you step through the doorway and head towards the bar... \n")
     utility.press_enter_to_continue()
+
 
 def brewswig_greet_player(player):
     print('\33[32m'"Brewswig the Innkeeper:"'\33[32m')
     print(f"Greetings {player.name} the {player.race}!")
 
+
 def brewswig_tell_me_your_name():
     utility.clear()
-    string_one = "Brewswig the Innkeeper:\n\"Well hello there adventurer! Allow me to introduce myself.\"\n\n" \
-                 "He places the freshly cleaned glass mug in front of you, and proudly throws the cleaning\n" \
-                 "rag over his shoulder; clearing his throat as he does so."
-
-    string_two = "**Ahem!**\n\nThe names Brewswig, an' this fine den ye find yeself in this even'in is none other\n" \
-                 "than The Snarling Warg Tavern.\"\n\"Sit down and make yourself at 'ome while I fetch ye a pint." \
-                 "You look like ye been on the road for a while.\""
-
-    string_three = "Taking the glass mug in front of you; Brewswig turns toward a oaken barrel resting on a shelf next" \
-                   " to him.\n" \
-                   "The foamy ale quickly fills the glass mug, and once filled; Brewswig places it down in front of " \
-                   "you.\n\n\"There ya go, this ones on the house.\"\n\n\"So... ah... what did you say your name was?\""
-    utility.test_colour(string_one)
+    utility.test_colour("Brewswig the Innkeeper:\n"
+                        "\"Well hello there adventurer! Allow me to introduce myself.\"\n\n"
+                        "He places the freshly cleaned glass mug in front of you, and proudly throws the cleaning\n"
+                        "rag over his shoulder; clearing his throat as he does so.")
     print()
-    utility.test_colour(string_two)
+    utility.test_colour("**Ahem!**\n\n"
+                        "Brewswig the Innkeeper:\n"
+                        "\"The names Brewswig, an' this fine den ye find yeself in this even'in is none other than The "
+                        "Snarling Warg Tavern.\"\n"
+                        "\"Sit down and make yourself at 'ome while I fetch ye a pint."
+                        "You look like ye been on the road for a while.\"")
     print()
-    utility.test_colour(string_three)
-    utility.purple_text()
+    utility.test_colour("Taking the glass mug in front of you; Brewswig turns toward a oaken barrel resting on a "
+                        "shelf next to him.\n"
+                        "The foamy ale quickly fills the glass mug, and once filled; Brewswig places it down in front "
+                        "of you.\n\n"
+                        "Brewswig the Innkeeper:\n"
+                        "\"There ya go, this ones on the house.\"\n"
+                        "\"So... ah... what did you say your name was?\"")
+    print()
+
 
 def brewswig_query_name(player):
     player_name = f"\33[35m{player.name}\33[0m"
-    string_one = "Brewswig the Innkeeper:\n"f"\"{player_name}, eh? Strange name.. None too common in these parts.\"\n\n" \
-                 f"\"You did say \33[35m{player_name}, right?\""
-    utility.test_colour(string_one)
+    utility.test_colour('Brewswig the Innkeeper:\n'
+                        f"\"{player_name}, eh? Strange name.. None too common in these parts.\"\n\n"
+                        f"\"You did say \33[35m{player_name}, right?\"")
 
 
 def brewswig_no_name_given():
-    string_one = "Brewswig the Innkeeper:\n\n\"Look, i've been in the business a long time; and my gut tells me that " \
-                 "ain't your name.\"\n"\
-                 "\"I got plenty of glasses to clean while I wait for you to give me a proper answer.\""
-    utility.test_colour(string_one)
+    utility.test_colour("Brewswig the Innkeeper:\n"
+                        "\"Look, i've been in the business a long time; and my gut tells me that ain't your name.\"\n"
+                        "\"I got plenty of glasses to clean while I wait for you to give me a proper answer.\"")
     print()
 
+
 def brewswig_incorrect_name():
-    print('\33[32m'"Brewswig the Innkeeper:"'\33[33m')
-    print("\"I did think that was a strange name... My apologies, I don't hear quite so well these days.\"")
-    print("\n\"What did you say your name was again?\"")
+    utility.test_colour("Brewswig the Innkeeper:\n"
+                        "\"I did think that was a strange name... My apologies, I don't hear quite so well these "
+                        "days.\"\n""\"What did you say your name was again?\"")
     utility.purple_text()
+
 
 def brewswig_tell_me_your_race(player):
     utility.clear()
-    print('\33[32m'"Brewswig the Innkeeper:"'\33[33m')
-    print(f"\"Well I must say it is nice to meet you \33[35m{player.name}\33[33m. It's been a while since someone new "
-          f"and interesting came through\n those doors.\"")
-
-    utility.white_text()
-    print("\33[35mBrewswig\33[0m chuckles to himself before removing a clean glass mug from underneath the bar and "
-          "turns to the same barrel \nhe had filled yours from, producing a nice foamy ale; that he quickly gulps "
-          "down.\n")
-    print("**Gulp...Gulp...Gulp\n")
-    print("He wipes the foam stuck to his bushy mustache with a satisfied look on his face.\n"
-          "Smiling once more, he turns to you.\n")
-
-    print('\33[32m'"Brewswig the Innkeeper:"'\33[33m')
-    print(f"\"So\33[35m {player.name}\33[33m, while we're gettin to know each other, how 'bout tellin me a little bit "
-          f"about yourself?\"\n")
-    print("\"I must say, with all that adventuring gear on, I can't tell where you hail from?\"\n")
-    print("\"Are you from the \33[35mHuman\33[33m settlements to the North?\"")
-    print("\"Or maybe the \33[35mElven\33[33m forests to the West?\"")
-    print("\"Perhaps you come from the grand underground kingdom of the \33[35mDwarves\33[33m to the East?\"\33[32m")
+    player_name = f"\33[35m{player.name}\33[0m"
+    utility.test_colour("Brewswig the Innkeeper:\n"
+                        f"\"Well I must say it is nice to meet you {player_name}. It's been a while since someone new "
+                        f"and interesting came through\n those doors.\"")
+    print()
+    utility.test_colour("Brewswig chuckles to himself before removing a clean glass mug from underneath the bar and "
+                        "turns to the same barrel \nhe had filled yours from, producing a nice foamy ale; "
+                        "that he quickly gulps down.\n\n"
+                        
+                        "**Gulp... Gulp... Gulp...**\n\n"
+                        
+                        "He wipes the foam stuck to his bushy mustache with satisfied look on his face.\n"
+                        "Smiling once more, he turns to you.")
+    print()
+    utility.test_colour("Brewswig the Innkeeper:\n"
+                        f"\"So {player_name}, while we're getting to know each other, how 'bout tellin me a little bit "
+                        f"about yourself?\"\n"
+                        "\"I must say, with all that adventuring gear on, I can't tell where you hail from?\"\n\n"
+                        "\"Are you from the Human settlements to the North?\"\n"
+                        "\"Or maybe the Elven forests to the West?\"\n"
+                        "\"Perhaps you come from the grand underground kingdom of the Dwarves to the East?\"")
     print()
     utility.press_enter_to_continue()
     utility.clear()
 
+
 def choose_race_options():
-    print('\33[32m'"Brewswig the Innkeeper:"'\33[33m')
-    print("\"Tell me of your home and kin... theres another ale in it for you!!\""'\33[32m\n')
-    print("\33[36m--Available Races--\33[32m")
+    utility.test_colour("Brewswig the Innkeeper:\n""\"Tell me of your home and kin... theres another ale in it for "
+                        "you!!\"")
+
+    print("\33[96m--Available Races--\33[92m")
     print("Choose your Race:\n")
 
-    print("[I] Human:\33[0m\n"
-          "While not especially unique, Humans are well rounded and effective adventurers:")
-    print("HP:25,  STR: 10,  DEF: 10\n"'\33[32m')
-
-    print("[II] Elf:\33[0m\nAncient and generally peaceful people, what they lack in strength, "
-          "they make up in speed.")
-    print("HP:20,  STR: 5,  DEF: 10\n"'\33[32m')
-
-    print("[III] Dwarf\33[0m:\nProud and stubborn folk, though their size limits their speed,they are fierce warriors.")
-    print("HP:30,  STR: 15,  DEF: 10\n"'\33[32m')
+    utility.test_colour("\33[92m[I] Human:\n"
+                        "While not especially unique, Humans are well rounded and effective adventurers:\n"
+                        "\33[96mHP:25,  STR: 10,  DEF: 10\n\n"
+                        
+                        "\33[92m[II] Elf:\n"
+                        "Ancient and generally peaceful people, what they lack in strength, they make up in speed.\n"
+                        "\33[96mHP:20,  STR: 5,  DEF: 10\n\n"
+                        
+                        "\33[92m[III] Dwarf\n"
+                        "Proud and stubborn folk, though their size limits their speed,they are fierce warriors.\n"
+                        "\33[96mHP:30,  STR: 15,  DEF: 10")
 
 
 def brewswig_human_details():
@@ -152,6 +160,7 @@ def brewswig_dwarf_details():
     print("You however... well... you look like you can handle that sort of adventure.\"\n")
     print("\"Oh... sorry... I got caught up in my story. You did say \33[35mDwarf\33[33m, right?\"\n")
 
+
 def brewswig_tell_me_your_specialty(player):
     utility.clear()
     print('\33[32mBrewswig the Innkeeper:\33[33m')
@@ -160,15 +169,3 @@ def brewswig_tell_me_your_specialty(player):
     print("\33[35mBrewswig\33[0m takes your mug and once again fills it with ale. Frothy foam drips down the side of")
     print("the glass as he places it down in front of you.\n")
     print("So traveller, you must have travelled a while to get here. Tell me... What is your role in the world?\"")
-
-
-
-
-
-
-
-
-
-
-
-

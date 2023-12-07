@@ -1,8 +1,6 @@
 import os
 import re
-import string
-import dialogue
-import player
+
 
 WHITE = '\33[0m'
 GREEN = '\33[32m'

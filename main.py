@@ -1,5 +1,6 @@
 import character_creation
 import start_menu
+import entities
 from npc import *
 
 run_program = False
@@ -13,6 +14,7 @@ def start_game():
     utility.clear()
     dialogue.opening_scene()
     # Create an instance of the Player Class
+    player = entities.Player("", "", "", "", "", "")
     player_instance = character_creation.create_character(player)
 
 # Start Program

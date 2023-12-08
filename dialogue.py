@@ -81,9 +81,9 @@ def brewswig_tell_me_your_race(player):
     utility.test_colour("Brewswig chuckles to himself before removing a clean glass mug from underneath the bar and "
                         "turns to the same barrel \nhe had filled yours from, producing a nice foamy ale; "
                         "that he quickly gulps down.\n\n"
-                        
+
                         "**Gulp... Gulp... Gulp...**\n\n"
-                        
+
                         "He wipes the foam stuck to his bushy mustache with satisfied look on his face.\n"
                         "Smiling once more, he turns to you.")
     print()
@@ -93,79 +93,113 @@ def brewswig_tell_me_your_race(player):
                         "\"I must say, with all that adventuring gear on, I can't tell where you hail from?\"\n\n"
                         "\"Are you from the Human settlements to the North?\"\n"
                         "\"Or maybe the Elven forests to the West?\"\n"
-                        "\"Perhaps you come from the grand underground kingdom of the Dwarves to the East?\"")
+                        "\"Perhaps you come from the grand underground kingdom of the Dwarves to the East?\"\n\n"
+                        "\"Tell me of your home and kin... theres another ale in it for "
+                        "you!!\"")
     print()
     utility.press_enter_to_continue()
     utility.clear()
 
 
 def choose_race_options():
-    utility.test_colour("Brewswig the Innkeeper:\n""\"Tell me of your home and kin... theres another ale in it for "
-                        "you!!\"")
-
-    print("\33[96m--Available Races--\33[92m")
-    print("Choose your Race:\n")
+    print("\33[96m--Available Races--\33[92m\n")
 
     utility.test_colour("\33[92m[I] Human:\n"
                         "While not especially unique, Humans are well rounded and effective adventurers:\n"
                         "\33[96mHP:25,  STR: 10,  DEF: 10\n\n"
-                        
+
                         "\33[92m[II] Elf:\n"
                         "Ancient and generally peaceful people, what they lack in strength, they make up in speed.\n"
                         "\33[96mHP:20,  STR: 5,  DEF: 10\n\n"
-                        
+
                         "\33[92m[III] Dwarf\n"
                         "Proud and stubborn folk, though their size limits their speed,they are fierce warriors.\n"
                         "\33[96mHP:30,  STR: 15,  DEF: 10")
+    print("\n\33[92mChoose your Race:")
 
 
 def brewswig_human_details():
     utility.clear()
-    print('\33[32m'"Brewswig the Innkeeper:"'\33[33m')
-    print("\"\33[35mHuman\33[33m, ay..? I thought so, but it's always better to know than to assume.\"")
-    print("\"I have met my fair share of your kin from this side of the bar over the years. Many a story has been ")
-    print("recounted on that very stool you sit upon.\"\n")
-    print("\"Funny though, I don't really recall anything great or exceptional about them.\"\n")
-    print("\"Although I have a feeling you might be an exception...\"\n")
-    print("\"I know of a \33[35mHuman\33[33m settlement to the North of here, but the name of the place escapes me.\"")
-    print("\"Its name was just so... so... unexceptional...\"\n")
-    print('\33[36m'"Human Base Stats:\nHP:25,  STR: 10,  DEF: 10\n\33[33m")
-    print("\"Oh... sorry... I got caught up in my story. You did say \33[35mHuman\33[33m, right?\"")
+    utility.test_colour("Brewswig the Innkeeper:\n"
+                        "\"Human, ay..? I thought so, but it's always better to know than to assume.\"\n\n"
+                        "\"I have met my fair share of your kin from this side of the bar over the years. Many a story "
+                        "has been recounted on that very stool you sit upon.\"\n"
+                        "\"Funny though, I don't really recall anything great or exceptional about them.\"\n"
+                        "\"Although I have a feeling you might be an exception...\"\n\n"
+                        "\"I know of a Human settlement to the North of here, but the name of the place escapes me.\""
+                        "\"Its name was just so... so... unexceptional...\"\n\n"
+                        "\33[96mBase Stats (Human\33[96m):\nHP:25,  STR: 10,  DEF: 10\n\33[0m\n"
+                        "\"Oh... sorry... I got caught up in my story. You did say Human, right?\"")
 
 
 def brewswig_elf_details():
     utility.clear()
-    print('\33[32m'"Brewswig the Innkeeper:"'\33[33m')
-    print("\"An \33[35mElf\33[33m you say..?! Fascinating! I can't say I was expectin that!\"")
-    print("\"I can't recall the last time I spoke too or even saw an \33[35mElf\33[33m!\"\n")
-    print("\"If I'm not mistaken; your kin are known for their agility and wisdom not for their strength.\"")
-    print("\"I'm yet to see anyone best a \33[35mElf\33[33m with speed alone, 'cept when they've had a tad too much "
-          "ale o'course\"\n")
-    print("\"You can find an \33[35mElf\33[33m settlement to the West of here, deep in the forest.\"")
-    print("\"I personally would not go there, these old legs can't carry me from danger like they could when I ")
-    print("was younger. However, you look more agile than most... you might be okay...\"\n")
-    print('\33[36m'"Elf Base Stats:\nHP:25,  STR: 10,  DEF: 10\n\33[33m")
-    print("\"Oh... sorry... I got caught up in my story. You did say \33[35mElf\33[33m, right?\"\n")
+    utility.test_colour("Brewswig the Innkeeper:\n"
+                        "\"An Elf you say..?! Fascinating! I can't say I was expectin that!\""
+                        "\"I can't recall the last time I spoke too or even saw an Elf!\"\n"
+                        "\"If I'm not mistaken; your kin are known for their agility and wisdom not for their "
+                        "strength.\"\n"
+                        "\"I'm yet to see anyone best a Elf with speed alone, 'cept when they've had a tad too much "
+                        "ale o'course\"\n\n"
+                        "\"You can find the Elven settlement to the West of here, deep in the forest.\"\n"
+                        "\"I personally would not go there, these old legs can't carry me from danger like they could "
+                        "when I was younger. However, you look more agile than most... you might be okay...\"\n\n"
+                        '\33[96m'"Base Stats: (Elf\33[96m):\nHP:25,  STR: 10,  DEF: 10\n\33[0m\n"
+                        "\"Oh... sorry... I got caught up in my story. You did say Elf, right?\"")
 
 
 def brewswig_dwarf_details():
     utility.clear()
-    print('\33[32m'"Brewswig the Innkeeper:"'\33[33m')
-    print("\"Really? A \33[35mDwarf\33[33m..? You're much... taller... than I would have expected.\"")
-    print("\"I remember that last Dwarf I saw... Boasted on and on about how strong he was.\"")
-    print("\"Shame his strength didnt help him run out of the way of that mad pack mule... That wasn't pretty...\"\n")
-    print("\"You can find the \33[35mDwarf\33[33m kingdom in the mountains to the East if your interested.\"")
-    print("\"But personally, I like to keep myself above ground. I have never been curious to know what lurks")
-    print("in the depths below the surface.\"\n")
-    print("You however... well... you look like you can handle that sort of adventure.\"\n")
-    print("\"Oh... sorry... I got caught up in my story. You did say \33[35mDwarf\33[33m, right?\"\n")
+    utility.test_colour("Brewswig the Innkeeper:\n"
+                        "\"Really? A Dwarf..!? You're much... taller... than I would have expected.\"\n\n"
+                        "\"I remember that last Dwarf I saw... Wouldn't stop boasting about his 'natural' "
+                        "strength...\"\n"
+                        "\"Shame his strength didnt help him run out of the way of that mad pack mule... "
+                        "That wasn't pretty...\"\n\n"
+                        "\"You can find the underground Dwarven kingdom in the mountains to the East if your "
+                        "interested.\"\n"
+                        "\"Personally, I have never been curious to know what lurks in the depths of the earth.\"\n"
+                        "\"You however... well... you look like you can handle that sort of curiosity.\"\n\n"
+                        '\33[96m'"Base Stats: (Dwarf\33[96m):\nHP:30,  STR: 15,  DEF: 10\n\33[0m\n"
+                        "\"Oh... sorry... I got caught up in my story. You did say Dwarf, right?\"\n")
 
 
 def brewswig_tell_me_your_specialty(player):
     utility.clear()
-    print('\33[32mBrewswig the Innkeeper:\33[33m')
-    print(f"\"So your a \33[35m{player.race}\33[33m who goes by the name \33[35m{player.name}\33[33m? Well met "
-          f"friend.\nHere... another ale as promised.\"\n")
-    print("\33[35mBrewswig\33[0m takes your mug and once again fills it with ale. Frothy foam drips down the side of")
-    print("the glass as he places it down in front of you.\n")
-    print("So traveller, you must have travelled a while to get here. Tell me... What is your role in the world?\"")
+    player_name = f"\33[35m{player.name}\33[0m"
+    utility.test_colour("Brewswig the Innkeeper:\n"
+                        f"\"So your a {player.race} who goes by the name {player_name}, huh? Well met friend.\"\n"
+                        "\"I still think your name is stange, but alas... as promised I'll fetch ye another ale.\"\n\n"
+                        
+                        "Brewswig takes your mug and once again fills it with ale. Frothy foam drips down the side of "
+                        "the glass as he places it\ndown in front of you.\n\n"
+                        
+                        f"\"So {player_name}, you must have travelled quite a distance to get all the way out here.\"\n"
+                        "\"You don't dress like a commoner, and you have a rough look about you. Tell me...\""
+                        "\"Have you experienced much trouble on the road?\"\n\n"
+                        "\"What is your profession?\"\n")
+    print()
+    utility.press_enter_to_continue()
+    utility.clear()
+
+
+def choose_class():
+    print("\33[96m--Available Class--\33[92m\n\n")
+    utility.test_colour("\33[92m[I] Fighter:\33[0m\n"
+                        "Favouring melee weapons and brute strength, fighters are not afraid to close the distance "
+                        "between themselves and their\n foes; in order to get close and personal.\n"
+                        "\33[92mStarting Inventory:\33[0m\n- Weapon: Sword\n- Gold: 50gp\n\n"
+                        "\33[96m---Bonuses---\33[0m\n"
+                        "- Proficient with melee weapons\n"
+                        "- +5 HP, +5 STR\n\n\n"
+
+                        "\33[92m[I] Ranger:\33[0m\n"
+                        "Favouring ranged weapons, rangers are skilled at utilising distance and keen senses to "
+                        "notice weaknesses from afar.\n"
+                        "\33[92mStarting Inventory:\33[0m\n- Weapon: Bow\n- Gold: 100gp\n\n"
+                        "\33[96m---Bonuses---\33[0m\n"
+                        "- Proficient with ranged weapons\n"
+                        "- .75x Gold multiplier from loot.")
+    print()
+    utility.press_enter_to_continue()
+    utility.clear()

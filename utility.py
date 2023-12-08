@@ -1,15 +1,6 @@
 import os
 import re
 
-
-WHITE = '\33[0m'
-GREEN = '\33[32m'
-YELLOW = '\33[33m'
-BLUE = '\33[34m'
-PURPLE = '\33[35m'
-AQUA = '\033[36m'
-
-
 # Clear Terminal
 def clear():
     os.system("cls")
@@ -55,7 +46,7 @@ def test_character_creation(player):
 
 def highlight_phrases(sentence, target_phrases_list):
     # Set colours of the lists in target_phrases_list in order.
-    color_codes = ('91', '92', '33', '94', '35', '36', '97')
+    color_codes = ('91', '92', '33', '94', '95', '96', '97')
     # Equals the sentence from test_colour()
     highlighted_sentence = sentence
 
@@ -69,9 +60,7 @@ def highlight_phrases(sentence, target_phrases_list):
         for target_phrase in target_phrases:
             target_phrase_lower = re.escape(target_phrase.lower())
             pattern = re.compile(fr'\b({target_phrase_lower})\b', re.IGNORECASE)
-            highlighted_sentence = pattern.sub(
-                f'\033[{color_code}m\\1\033[0m', highlighted_sentence
-            )
+            highlighted_sentence = pattern.sub(f'\033[{color_code}m\\1\033[0m', highlighted_sentence)
 
     return highlighted_sentence.strip()
 
@@ -88,11 +77,11 @@ def test_colour(input_string):
         ["treasure", 'gp', 'gold', 'coins', 'jewels'],
 
         # Directions - Blue
-        ["North", "South", "East", "West"],
+        ["North", "South", "East", "West", "the snarling warg tavern"],
 
         # Names / Important - Purple
-        ["brewswig", "the snarling warg tavern", 'dwarf', 'dwarven', 'dwarves', 'elf', 'elven', 'elves', 'human',
-         'humans'],
+        ["brewswig", 'dwarf', 'dwarven', 'dwarves', 'elf', 'elven', 'elves', 'human',
+         'humans', 'fighter', 'ranger'],
 
         # Items / Equipment - Aqua
         ["sword", "shield", "potion", "dagger", "ale"],

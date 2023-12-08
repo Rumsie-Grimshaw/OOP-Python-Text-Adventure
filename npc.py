@@ -1,6 +1,5 @@
 import dialogue
 import utility
-import player
 
 class Brewswig:
     def __init__(self):

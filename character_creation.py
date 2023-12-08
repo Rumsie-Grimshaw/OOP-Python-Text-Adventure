@@ -64,29 +64,43 @@ class CharacterCreation:
     def tell_me_your_specialty(self, player):
         utility.clear()
         dialogue.brewswig_tell_me_your_specialty(player)
+        dialogue.choose_class()
         input()
 
-    ### Character Race Options ###
+    # ----- Character Race Options ----- #
     def get_player_race_human(self, player):
         player.race = "Human"
+        player.profession = ''
+        player.weapon = ''
         player.health = 25
         player.strength = 10
         player.defense = 10
-        return player.race, player.health, player.strength, player.defense
+        player.gold = 0
+
+        return player.race, player.profession, player.weapon, player.health, player.strength, player.defense, \
+            player.gold
 
     def get_player_race_elf(self, player):
         player.race = "Elf"
+        player.profession = ''
+        player.weapon = ''
         player.health = 20
         player.strength = 5
         player.defense = 10
-        return player.race, player.health, player.strength, player.defense
+        player.gold = 0
+        return player.race, player.profession, player.weapon, player.health, player.strength, player.defense,\
+            player.gold
 
     def get_player_race_dwarf(self, player):
         player.race = "Dwarf"
+        player.profession = ''
+        player.weapon = ''
         player.health = 30
         player.strength = 15
         player.defense = 10
-        return player.race, player.health, player.strength, player.defense
+        player.gold = 0
+        return player.race, player.profession, player.weapon, player.health, player.strength, player.defense, \
+            player.gold
 
 
 # ----- CREATE CHARACTER ----- #
@@ -96,7 +110,8 @@ def create_character(player):
     utility.clear()
     character_object.tell_me_your_race(player)
     utility.clear()
-    # create_character.tell_me_your_specialty(player)
+    character_object.tell_me_your_specialty(player)
+
 
     input("Press enter to see your character results!")
     utility.test_character_creation(player)

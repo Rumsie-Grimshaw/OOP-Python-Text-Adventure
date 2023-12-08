@@ -1,6 +1,4 @@
-import player
 import utility
-from npc import Brewswig
 
 
 def opening_scene():

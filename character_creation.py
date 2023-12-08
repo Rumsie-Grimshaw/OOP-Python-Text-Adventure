@@ -14,6 +14,7 @@ class CharacterCreation:
                 dialogue.brewswig_no_name_given()
                 player.name = input('\33[0m'"Answer: "'\33[35m')
                 continue
+            utility.clear()
             dialogue.brewswig_query_name(player)
             answer = utility.confirm_option()
             if answer == "1":
@@ -56,51 +57,83 @@ class CharacterCreation:
 
             answer = utility.confirm_option()
             if answer == "1":
-                correct_race = True
                 return player_race
             else:
+                utility.clear()
                 continue
 
-    def tell_me_your_specialty(self, player):
-        utility.clear()
-        dialogue.brewswig_tell_me_your_specialty(player)
-        dialogue.choose_class()
-        input()
-
     # ----- Character Race Options ----- #
-    def get_player_race_human(self, player):
+    @staticmethod
+    def get_player_race_human(player):
         player.race = "Human"
-        player.profession = ''
-        player.weapon = ''
         player.health = 25
+        player.max_health = player.health
         player.strength = 10
-        player.defense = 10
-        player.gold = 0
+        player.defense = 5
+        return player
 
-        return player.race, player.profession, player.weapon, player.health, player.strength, player.defense, \
-            player.gold
-
-    def get_player_race_elf(self, player):
+    @staticmethod
+    def get_player_race_elf(player):
         player.race = "Elf"
-        player.profession = ''
-        player.weapon = ''
         player.health = 20
+        player.max_health = player.health
         player.strength = 5
         player.defense = 10
-        player.gold = 0
-        return player.race, player.profession, player.weapon, player.health, player.strength, player.defense,\
-            player.gold
+        return player
 
-    def get_player_race_dwarf(self, player):
+    @staticmethod
+    def get_player_race_dwarf(player):
         player.race = "Dwarf"
-        player.profession = ''
-        player.weapon = ''
         player.health = 30
+        player.max_health = player.health
         player.strength = 15
         player.defense = 10
-        player.gold = 0
-        return player.race, player.profession, player.weapon, player.health, player.strength, player.defense, \
-            player.gold
+        return player
+
+    def tell_me_your_profession(self, player):
+        utility.clear()
+        correct_profession = False
+        dialogue.brewswig_tell_me_your_specialty(player)
+        while not correct_profession:
+            dialogue.choose_class()
+            profession = input('\33[0m'"Answer: "'\33[35m').lower()
+
+            if profession == "i" or profession == "1":
+                # dialogue.brewswig_fighter_details() TODO:
+                player_profession = self.get_player_profession_fighter(player)
+            elif profession == "ii" or profession == "2":
+                # dialogue.brewswig_ranger_details() TODO:
+                player_profession = self.get_player_profession_ranger(player)
+            else:
+                print("\n\33[31mInvalid Selection: Please try again\n")
+                utility.press_enter_to_continue()
+                utility.clear()
+                continue
+
+            answer = utility.confirm_option()
+            if answer == "1":
+                return player_profession
+            else:
+                utility.clear()
+                continue
+
+    @staticmethod
+    def get_player_profession_fighter(player):
+        player.profession = "Fighter"
+        player.weapon = "Sword"
+        player.strength += 2
+        player.max_health += 5
+        player.health = player.max_health
+        player.gold += 50
+        return player
+
+    @ staticmethod
+    def get_player_profession_ranger(player):
+        player.profession = "Ranger"
+        player.weapon = "Bow"
+        player.gold += 100
+        player.health_potion = 1
+        return player
 
 
 # ----- CREATE CHARACTER ----- #
@@ -110,8 +143,6 @@ def create_character(player):
     utility.clear()
     character_object.tell_me_your_race(player)
     utility.clear()
-    character_object.tell_me_your_specialty(player)
-
-
-    input("Press enter to see your character results!")
-    utility.test_character_creation(player)
+    character_object.tell_me_your_profession(player)
+    utility.clear()
+    return player

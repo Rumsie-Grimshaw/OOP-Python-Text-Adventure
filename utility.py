@@ -39,9 +39,14 @@ def confirm_option():
 def test_character_creation(player):
     print(f"Name: {player.name}\n"
           f"Race: {player.race}\n"
+          f"Profession: {player.profession}\n"
+          f"Weapon: {player.weapon}\n"
+          f"Max Health: {player.max_health}\n"
           f"HP: {player.health}\n"
           f"Str: {player.strength}\n"
-          f"Def: {player.defense}\n")
+          f"Def: {player.defense}\n"
+          f"Gold: {player.gold}\n"
+          f"Potions: {player.health_potion}\n")
 
 
 def highlight_phrases(sentence, target_phrases_list):

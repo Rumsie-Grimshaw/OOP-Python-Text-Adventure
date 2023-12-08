@@ -10,8 +10,20 @@ class Entity(ABC):
 # Construct the Player object.
 # Construct properties and methods from Entity.
 class Player(Entity):
-    def __init__(self, name, race, profession, health, strength, defense):
+    def __init__(self, name='', race='', profession='', weapon='', max_health=0, health=0, strength=0, defense=0,
+                 gold=0, health_potion=0):
         super().__init__()
+
+        self.name = name
+        self.race = race
+        self.profession = profession
+        self.weapon = weapon
+        self.max_health = max_health
+        self.health = health
+        self.strength = strength
+        self.defense = defense
+        self.gold = gold
+        self.health_potion = health_potion
 
         def attack(self):
             damage = random.randint(1, 10)

@@ -16,7 +16,7 @@ def opening_scene():
     print("")
     print("The tavern appears to be empty, save for one man who seems to be occupied with cleaning fine glass mug as")
     print("he hums to himself. He notices you as you step through the doorway and head towards the bar... \n")
-    utility.press_enter_to_continue()
+    print("")
 
 
 def brewswig_greet_player(player):
@@ -177,27 +177,37 @@ def brewswig_tell_me_your_specialty(player):
                         "\"Have you experienced much trouble on the road?\"\n\n"
                         "\"What is your profession?\"\n")
     print()
-    utility.press_enter_to_continue()
-    utility.clear()
 
 
 def choose_class():
     print("\33[96m--Available Class--\33[92m\n\n")
     utility.test_colour("\33[92m[I] Fighter:\33[0m\n"
                         "Favouring melee weapons and brute strength, fighters are not afraid to close the distance "
-                        "between themselves and their\n foes; in order to get close and personal.\n"
+                        "between themselves and their\n foes; in order to get close and personal.\n\n"
                         "\33[92mStarting Inventory:\33[0m\n- Weapon: Sword\n- Gold: 50gp\n\n"
                         "\33[96m---Bonuses---\33[0m\n"
                         "- Proficient with melee weapons\n"
-                        "- +5 HP, +5 STR\n\n\n"
+                        "- +5 HP, +3 STR\n\n\n"
 
                         "\33[92m[I] Ranger:\33[0m\n"
                         "Favouring ranged weapons, rangers are skilled at utilising distance and keen senses to "
-                        "notice weaknesses from afar.\n"
+                        "notice weaknesses from afar.\n\n"
                         "\33[92mStarting Inventory:\33[0m\n- Weapon: Bow\n- Gold: 100gp\n\n"
                         "\33[96m---Bonuses---\33[0m\n"
                         "- Proficient with ranged weapons\n"
                         "- .75x Gold multiplier from loot.")
     print()
-    utility.press_enter_to_continue()
+
+def brewswig_fighter_details():
     utility.clear()
+    utility.test_colour("Brewswig the Innkeeper:\n\n"
+                        "A fighter you say? I might have a job for you if your interested...\n"
+                        "It may be a little tough for most folks, but I think you should be able to handle it.\n\n"
+                        "Before I go on... You did say a fighter right?")
+
+def brewswig_ranger_details():
+    utility.clear()
+    utility.test_colour("Brewswig the Innkeeper:\n\n"
+                        "Oh, a ranger! I might have a little job for your if your interested...\n"
+                        "It shouldn't be too difficult; especially if you posses the keen senses of a ranger.\n\n"
+                        "Before I go on... You did say a ranger right?")

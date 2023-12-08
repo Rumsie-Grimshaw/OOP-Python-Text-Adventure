@@ -1,9 +1,18 @@
+import random
 # SuperClass for all entities in the game.
 class Entity:
+    def __init__(self):
+        def attack(self):
+            pass
+
+# Class for the player properties and methods
+# Construct the Player object.
+# Construct properties and methods from Entity.
+class Player(Entity):
     def __init__(self, name, race, profession, health, strength, defense):
-        self.name = name
-        self.race = race
-        self.profession = profession
-        self.health_points = health
-        self.strength = strength
-        self.defense = defense
+        super().__init__()
+
+        def attack(self):
+            damage = random.randint(1, 10)
+            damage_total = self.strength + damage
+            pass

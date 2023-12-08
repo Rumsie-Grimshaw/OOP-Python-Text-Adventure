@@ -1,6 +1,7 @@
 import random
+from abc import ABC
 # SuperClass for all entities in the game.
-class Entity:
+class Entity(ABC):
     def __init__(self):
         def attack(self):
             pass

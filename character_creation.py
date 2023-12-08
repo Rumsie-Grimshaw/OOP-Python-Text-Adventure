@@ -1,6 +1,6 @@
 import dialogue
 import utility
-import player
+
 
 class CharacterCreation:
     def tell_me_your_name(self, player):
@@ -66,7 +66,7 @@ class CharacterCreation:
         dialogue.brewswig_tell_me_your_specialty(player)
         input()
 
-### Character Race Options ###
+    ### Character Race Options ###
     def get_player_race_human(self, player):
         player.race = "Human"
         player.health = 25
@@ -88,3 +88,15 @@ class CharacterCreation:
         player.defense = 10
         return player.race, player.health, player.strength, player.defense
 
+
+# ----- CREATE CHARACTER ----- #
+def create_character(player):
+    character_object = CharacterCreation()
+    character_object.tell_me_your_name(player)
+    utility.clear()
+    character_object.tell_me_your_race(player)
+    utility.clear()
+    # create_character.tell_me_your_specialty(player)
+
+    input("Press enter to see your character results!")
+    utility.test_character_creation(player)

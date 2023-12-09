@@ -1,0 +1,10 @@
+Shlooklaboobalah
+Human
+Ranger
+Bow
+25
+25
+10
+5
+100
+1

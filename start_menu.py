@@ -35,13 +35,14 @@ def interact():
         draw_main_menu()
         menu_choice = input("")
         if menu_choice == "1":
-            return
-        elif menu_choice in ("2", "3", "4"):
+            return menu_choice
 
+        elif menu_choice in ("2", "3", "4"):
             if menu_choice == "2":
                 player = entities.Player()
                 utility.load_game(player)
                 print(player.name, player.gold)
+                return menu_choice
 
             if menu_choice == "3":
                 utility.clear()

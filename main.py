@@ -7,8 +7,11 @@ run_program = False
 
 def initiliaze():
     utility.clear()
-    start_menu.interact()
-    start_game()
+    menu_select = start_menu.interact()
+    if menu_select == "1":
+        start_game()
+    elif menu_select == "2":
+        print("The adventure continues")
 
 def start_game():
     utility.clear()
@@ -18,6 +21,10 @@ def start_game():
     player_instance = character_creation.create_character(player)
     input("Press enter to see your character results!")
     utility.test_character_creation(player_instance)
+    utility.save_game(player)
+
+def continue_game():
+    pass
 
 
 # Start Program

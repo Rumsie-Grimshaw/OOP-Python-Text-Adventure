@@ -1,4 +1,6 @@
 import sys
+
+import entities
 import utility
 
 # Draw main menu on start-up
@@ -36,9 +38,10 @@ def interact():
             return
         elif menu_choice in ("2", "3", "4"):
 
-            # TODO: Implement save and loading feature as this if statement does nothing currently
             if menu_choice == "2":
-                continue
+                player = entities.Player()
+                utility.load_game(player)
+                print(player.name, player.gold)
 
             if menu_choice == "3":
                 utility.clear()

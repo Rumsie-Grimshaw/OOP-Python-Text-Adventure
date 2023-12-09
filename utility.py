@@ -94,4 +94,41 @@ def test_colour(input_string):
     highlighted_result = highlight_phrases(sentence, target_phrases_list)
     print(highlighted_result)
 
+def save_game(player):
+    player_state = [player.name,
+                    player.race,
+                    player.profession,
+                    player.weapon,
+                    player.max_health,
+                    player.health,
+                    player.strength,
+                    player.defense,
+                    player.gold,
+                    player.health_potion]
+    with open("load.txt", "w") as save_file:
+        for field in player_state:
+            save_file.write(str(field) + "\n")
+        save_file.close()
+
+def load_game(player):
+    with open("load.txt", "r") as load_file:
+        lines = load_file.readlines()
+
+        # Assign values to player properties based on file content
+        player.name = lines[0].strip()
+        player.race = lines[1].strip()
+        player.profession = lines[2].strip()
+        player.weapon = lines[3].strip()
+        player.max_health = int(lines[4].strip())
+        player.health = int(lines[5].strip())
+        player.strength = int(lines[6].strip())
+        player.defense = int(lines[7].strip())
+        player.gold = int(lines[8].strip())
+        player.health_potion = int(lines[9].strip())
+
+        return player
+
+
+
+
 

@@ -1,10 +1,10 @@
-Shlooklaboobalah
-Human
+Cogg'n
+Dwarf
 Ranger
 Bow
-25
-25
-10
-5
+40
+40
+15
+12
 100
 1

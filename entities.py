@@ -25,7 +25,17 @@ class Player(Entity):
         self.gold = gold
         self.health_potion = health_potion
 
+        self.tutorial_quest = False
+
         def attack(self):
             damage = random.randint(1, 10)
             damage_total = self.strength + damage
             pass
+
+class Enemy(Entity):
+    def __init__(self, name='', race='', profession='', weapon='', max_health=0, health=0, strength=0, defense=0,
+                 gold=0, health_potion=0):
+        super().__init__()
+
+
+bubbles_the_cow = Enemy("Bubbles", "Cow", "Grazer", "Horns", 30, 30, 12, 0, 0, 0)

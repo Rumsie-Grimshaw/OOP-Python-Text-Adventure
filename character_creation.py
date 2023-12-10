@@ -99,10 +99,10 @@ class CharacterCreation:
             profession = input('\33[0m'"Answer: "'\33[35m').lower()
 
             if profession == "i" or profession == "1":
-                # dialogue.brewswig_fighter_details() TODO:
+                dialogue.brewswig_fighter_details()
                 player_profession = self.get_player_profession_fighter(player)
             elif profession == "ii" or profession == "2":
-                # dialogue.brewswig_ranger_details() TODO:
+                dialogue.brewswig_ranger_details()
                 player_profession = self.get_player_profession_ranger(player)
             else:
                 print("\n\33[31mInvalid Selection: Please try again\n")
@@ -121,18 +121,21 @@ class CharacterCreation:
     def get_player_profession_fighter(player):
         player.profession = "Fighter"
         player.weapon = "Sword"
-        player.strength += 2
+        player.strength += 5
         player.max_health += 5
         player.health = player.max_health
         player.gold += 50
+        player.health_potion = 1
         return player
 
     @ staticmethod
     def get_player_profession_ranger(player):
         player.profession = "Ranger"
         player.weapon = "Bow"
+        player.defense += 2
+        player.max_health += 10
+        player.health = player.max_health
         player.gold += 100
-        player.health_potion = 1
         return player
 
 
@@ -145,4 +148,7 @@ def create_character(player):
     utility.clear()
     character_object.tell_me_your_profession(player)
     utility.clear()
+    dialogue.brewswig_quest_dialogue()
+    utility.press_enter_to_continue()
+
     return player

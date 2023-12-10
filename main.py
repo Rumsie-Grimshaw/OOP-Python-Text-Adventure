@@ -21,7 +21,6 @@ def start_game():
     player_instance = character_creation.create_character(player)
     input("Press enter to see your character results!")
     utility.test_character_creation(player_instance)
-    utility.save_game(player)
 
 def continue_game():
     pass

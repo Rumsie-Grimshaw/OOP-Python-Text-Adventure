@@ -73,7 +73,7 @@ def test_colour(input_string):
     sentence = input_string
     target_phrases_list = [
         # Enemies - Red
-        ["goblin", "goblins", "trolls", "wolf"],
+        ["goblin", "goblins", "trolls", "wolf", "bubbles"],
 
         # Interactions / Options - Green
         ["brewswig the innkeeper"],

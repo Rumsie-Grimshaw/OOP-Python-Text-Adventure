@@ -177,37 +177,68 @@ def brewswig_tell_me_your_specialty(player):
                         "\"Have you experienced much trouble on the road?\"\n\n"
                         "\"What is your profession?\"\n")
     print()
+    utility.press_enter_to_continue()
+    utility.clear()
 
 
 def choose_class():
     print("\33[96m--Available Class--\33[92m\n\n")
     utility.test_colour("\33[92m[I] Fighter:\33[0m\n"
                         "Favouring melee weapons and brute strength, fighters are not afraid to close the distance "
-                        "between themselves and their\n foes; in order to get close and personal.\n\n"
-                        "\33[92mStarting Inventory:\33[0m\n- Weapon: Sword\n- Gold: 50gp\n\n"
+                        "between themselves and their\nfoes; in order to get close and personal.\n\n"
+                        "\33[92mStarting Inventory:\33[0m\n- Weapon: Sword\n- Gold: 50gp\n"
                         "\33[96m---Bonuses---\33[0m\n"
                         "- Proficient with melee weapons\n"
-                        "- +5 HP, +3 STR\n\n\n"
+                        "- +5 HP, +5 STR"
+                        "- Starts with a Health Potion\n\n\n"
 
                         "\33[92m[I] Ranger:\33[0m\n"
                         "Favouring ranged weapons, rangers are skilled at utilising distance and keen senses to "
                         "notice weaknesses from afar.\n\n"
-                        "\33[92mStarting Inventory:\33[0m\n- Weapon: Bow\n- Gold: 100gp\n\n"
+                        "\33[92mStarting Inventory:\33[0m\n- Weapon: Bow\n- Gold: 100gp\n"
                         "\33[96m---Bonuses---\33[0m\n"
                         "- Proficient with ranged weapons\n"
-                        "- .75x Gold multiplier from loot.")
+                        "- +10 HP, +2 DEF\n"
+                        "- .75x Gold multiplier from loot.\n\n")
+    print("\n\33[92mChoose your Profession:")
     print()
 
 def brewswig_fighter_details():
     utility.clear()
     utility.test_colour("Brewswig the Innkeeper:\n\n"
-                        "A fighter you say? I might have a job for you if your interested...\n"
-                        "It may be a little tough for most folks, but I think you should be able to handle it.\n\n"
-                        "Before I go on... You did say a fighter right?")
+                        "A fighter you say? I know you only just arrived, but I was wondering if perhaps you might \n"
+                        "be willing to do a small task for me?\n"
+                        "I must admit; it's a little bit of a sad affair for me, although I think you'll be able to"
+                        "handle it. There will be a reward in it for you of course.\n\n"
+                        "But enough of that...before I give you the details... You did say a fighter right?")
 
 def brewswig_ranger_details():
     utility.clear()
     utility.test_colour("Brewswig the Innkeeper:\n\n"
-                        "Oh, a ranger! I might have a little job for your if your interested...\n"
-                        "It shouldn't be too difficult; especially if you posses the keen senses of a ranger.\n\n"
-                        "Before I go on... You did say a ranger right?")
+                        "\"Did you say a ranger! I don't suppose I could trouble you to run a little errand for me, "
+                        "could I?\"\n"
+                        "\"With the keen senses of a ranger, it should be no trouble for you at all!\"\n\n"
+                        "\"Before I give you the details though... You did say a ranger right?\"")
+
+def brewswig_quest_dialogue():
+    utility.clear()
+    utility.test_colour("Brewswig the Innkeeper:\n\n"
+                        "\"I need you to uh-hh... I need you too...\"\n\n"
+                        "Brewswig takes in a deep breathe, averting his gaze as he does so; exhaling slowly. In a \n"
+                        "single motion, Brewswig downs the remnants of the ale in his mug and fills it once more.\n"
+                        "You notice a saddened glistening in his eye as he stands facing the barrel.\n"
+                        "He turns to you, meeting your gaze.\n\n"
+                        
+                        "\"I need you to go out to the paddock and kill Bubbles... my cow...\"\n\n"
+                        
+                        "As the words escape his mouth, you witness the grief that is befalling this man, his \n"
+                        "knuckles paling from the clenching of his fists atop the bar.\n\n"
+                        
+                        "\"She's gone mad you see... I don't know how, or why... but she hasn't been the same for \n"
+                        "about a month now."
+                        "Once, she was the sweetest little cow you've ever met, but lately she wont let anyone near \n"
+                        "her. Hell, she even tried to kill one of the young boys who used to pet her.\n"
+                        "Even tried to kill me just yesterday! It's like she doesn't even recognise me...\"\n\n"
+                        "\"So what do you say? Are you willing help old Brewswig? Can you put Bubbles out of her \n"
+                        "misery?\"")
+
